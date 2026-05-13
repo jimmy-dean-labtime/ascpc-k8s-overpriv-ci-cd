@@ -30,7 +30,7 @@
 # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
 # For more options with the actions used below please refer to https://github.com/Azure/login
 
-name: mytest
+name: wkl-1
 
 on:
   push:
@@ -38,17 +38,17 @@ on:
   workflow_dispatch:
 
 env:
-  ACR_RESOURCE_GROUP: k8s
-  AZURE_CONTAINER_REGISTRY: ascpck8s
-  CONTAINER_NAME: image-workflow-1778668370810
+  ACR_RESOURCE_GROUP: DefaultResourceGroup-CCAN
+  AZURE_CONTAINER_REGISTRY: k8sregistry1
+  CONTAINER_NAME: image-workflow-1755025012783
   CLUSTER_NAME: k8s
-  CLUSTER_RESOURCE_GROUP: k8s
+  CLUSTER_RESOURCE_GROUP: DefaultResourceGroup-CCAN
   CLUSTER_RESOURCE_TYPE: Microsoft.ContainerService/managedClusters
   DEPLOYMENT_MANIFEST_PATH: |
     ./manifests/deployment.yaml
   DOCKER_FILE: ./Dockerfile
   BUILD_CONTEXT_PATH: ./
-  NAMESPACE: namespace-workflow-1778668370810
+  NAMESPACE: namespace-workflow-1755025012783
   ENABLENAMESPACECREATION: false
   AUTH_TYPE: SERVICE_PRINCIPAL
 
@@ -169,4 +169,3 @@ jobs:
           namespace: ${{ env.NAMESPACE }}
           resource-type: ${{ env.CLUSTER_RESOURCE_TYPE }}
           annotate-namespace: ${{ env.CLUSTER_RESOURCE_TYPE != 'Microsoft.ContainerService/fleets' }}
-
