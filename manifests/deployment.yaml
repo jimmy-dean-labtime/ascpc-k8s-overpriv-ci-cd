@@ -25,7 +25,7 @@ spec:
         - name: acr-secret
       containers:
         - name: nodejs-app
-          image: "ascpc-bmcsd7aydbbvdzfw.azurecr.io/nodejs-app:{{imageTag}}"
+          image: "ascpcjimmyk8s.azurecr.io/nodejs-app:{{imageTag}}"
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
